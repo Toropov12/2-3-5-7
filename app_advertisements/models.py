@@ -7,8 +7,9 @@ class Advertisements(models.Model):
     auction = models.BooleanField("Торг")
     created_at = models.DateTimeField("Дата создания", auto_now_add=True)
     update_at = models.DateTimeField("Дата обнавления", auto_now=True)
-    '''def __str__
-'''
+    def __str__(self):
+        return f"Advertisements(id={self.id}, title={self.title}, price={self.price})"
+
     @admin.display(description='Дата создания')
     def created_date(self):
         from django.utils import timezone
